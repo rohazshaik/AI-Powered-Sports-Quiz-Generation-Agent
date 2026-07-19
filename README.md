@@ -37,7 +37,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 ## Run the app
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 On first launch, the app seeds the local ChromaDB database from `data/sports_facts.json` and stores it in `chroma_db/`.
@@ -48,6 +48,7 @@ On first launch, the app seeds the local ChromaDB database from `data/sports_fac
 sports-quiz-agent/
 ├── README.md
 ├── requirements.txt
+├── streamlit_app.py
 ├── app.py
 ├── data/
 │   └── sports_facts.json

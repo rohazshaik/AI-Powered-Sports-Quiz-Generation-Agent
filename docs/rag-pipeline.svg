@@ -1,0 +1,46 @@
+<svg width="680" height="538" viewBox="0 0 680 538" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>RAG pipeline flow for the sports quiz app</title>
+<desc>User picks a sport and difficulty, which triggers a ChromaDB search and a DuckDuckGo search in parallel, both merge into one context block, Gemini writes the quiz from that context, the reply is parsed and deduped, then Streamlit displays it with feedback.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="210" y="20" width="260" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="340" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">Pick sport &amp; difficulty</text>
+
+<path d="M340 64 L340 82 L180 82 L180 100" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M340 64 L340 82 L460 82 L460 100" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="50" y="100" width="260" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="180" y="124" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">ChromaDB search</text>
+<text x="180" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">Historical facts by sport</text>
+
+<rect x="330" y="100" width="260" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="460" y="124" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#712B13">DuckDuckGo search</text>
+<text x="460" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#993C1D">Recent news, filtered for junk</text>
+
+<path d="M180 156 L180 174 L340 174 L340 190" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+<path d="M460 156 L460 174 L340 174 L340 190" fill="none" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="210" y="190" width="260" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="340" y="216" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">Merge into one context</text>
+
+<line x1="340" y1="234" x2="340" y2="270" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="200" y="270" width="280" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+<text x="340" y="294" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#3C3489">Gemini writes quiz (JSON)</text>
+<text x="340" y="312" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#534AB7">Grounded only by that context</text>
+
+<line x1="340" y1="326" x2="340" y2="362" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="210" y="362" width="260" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+<text x="340" y="388" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">Parse + dedupe questions</text>
+
+<line x1="340" y1="406" x2="340" y2="442" stroke="#5F5E5A" stroke-width="1" marker-end="url(#arrow)"/>
+
+<rect x="190" y="442" width="300" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="340" y="466" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="500" fill="#085041">Streamlit shows the quiz</text>
+<text x="340" y="484" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F6E56">Click an answer for instant feedback</text>
+</svg>
