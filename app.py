@@ -8,16 +8,14 @@ from src.generator import generate_quiz
 
 @st.cache_resource
 def load_knowledge_base():
-    """Populates ChromaDB once per app session, not on every rerun."""
     seed_database()
 
 
 load_knowledge_base()
 st.title("🏆 AI-Powered Sports Quiz Generator")
 st.write(
-    "Pick a sport and difficulty, and the agent will pull historical facts "
-    "from a local vector database plus live web results to write a "
-    "grounded quiz."
+    "Pick a sport and difficulty, and the app will build a grounded quiz from "
+    "local facts plus live web snippets."
 )
 
 st.sidebar.header("Quiz Settings")
